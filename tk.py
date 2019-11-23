@@ -28,13 +28,13 @@ brands["Burton"] = set()
 brands["Calvin Klein"] = set()
 brands["Champion"] = set()
 brands["Columbia"] = set()
-# brands["Diesel"] = set()
+brands["Diesel"] = set()
 brands["Element"] = set()
 brands["Gant"] = set()
 brands["Gucci"] = set()
 brands["Hackett"] = set()
 brands["Hunter"] = set()
-# brands["Hugo Boss"] = set()
+brands["Hugo Boss"] = set()
 brands["Jack Wolfskin"] = set()
 brands["Kenneth Cole"] = set()
 # brands["Kent & Curwen"] = set()
@@ -46,7 +46,7 @@ brands["Michael Kors"] = set()
 brands["Mustang"] = set()
 brands["Nautica"] = set()
 brands["Nike"] = set()
-# brands["Outdoor Research"] = set()
+brands["Outdoor Research"] = set()
 brands["Original Penguin"] = set()
 brands["O'Neill"] = set()
 brands["Patagonia"] = set()
@@ -54,7 +54,7 @@ brands["Polo Ralph Lauren"] = set()
 brands["US Polo Assn"] = set()
 brands["Ralph Lauren"] = set()
 brands["Scotch & Soda"] = set()
-# brands["Spyder"] = set()
+brands["Spyder"] = set()
 brands["Starter"] = set()
 brands["Ted Baker"] = set()
 brands["The North Face"] = set()
@@ -69,9 +69,11 @@ brands["Salomon"] = set()
 brands["Timberland"] = set()
 brands["Herschel"] = set()
 brands["Skagen"] = set()
+brands["MeUndies"] = set()
 
 # Materials
 brands["Cashmere"] = set()
+brands["Merino"] = set()
 
 
 def add_brands_from_url(url):
@@ -84,6 +86,8 @@ def add_brands_from_url(url):
             brands[brand].add('    ' + item['label'] + ': ' + baseUrl + item['url'])
         if item['materialBadgeName'] == "Cashmere":
             brands["Cashmere"].add('    ' + item['brandName'] + ' ' + item['label'] + ': ' + baseUrl + item['url'])
+        if "Merino" in item['label']:
+            brands["Merino"].add('    ' + item['brandName'] + ' ' + item['label'] + ': ' + baseUrl + item['url'])
 
 
 allItemsUrl = 'https://www.tkmaxx.com/uk/en/men/clothing/c/02020000/autoLoad?q=&sort=publishedDate-desc&facets=stockLevelStatus%3AinStock%3Asize%3A0002%252C0008%252CUniversal%252CM&fetchAll=true&page=50'
@@ -94,12 +98,12 @@ accessoriesUrl = 'https://www.tkmaxx.com/uk/en/men/accessories/c/02030000/autoLo
 shoesUrl = 'https://www.tkmaxx.com/uk/en/men/shoes/c/02050000/autoLoad?q=&sort=publishedDate-desc&facets=size%3A0007%252C0022%252CShoes%252C8%3AstockLevelStatus%3AinStock&fetchAll=true&page=50'
 savingsUrl = 'https://www.tkmaxx.com/uk/en/men/biggest-savings/c/02060000/autoLoad?q=&sort=price-asc&facets=allCategories%3A02000000%3ApriceValue%3A%255B20%2520TO%25201000%255D%3AstockLevelStatus%3AinStock%3Asize%3A0002%252C0008%252CUniversal%252CM%3Asize%3A0004%252C0011%252CChest%252C38%3Asize%3A0007%252C0022%252CShoes%252C8&fetchAll=true&page=50'
 
-# add_brands_from_url(allItemsUrl)
-# add_brands_from_url(newItemsUrl)
-# add_brands_from_url(clearanceUrl)
-# add_brands_from_url(activeWearUrl)
-# add_brands_from_url(accessoriesUrl)
-# add_brands_from_url(shoesUrl)
+add_brands_from_url(allItemsUrl)
+add_brands_from_url(newItemsUrl)
+add_brands_from_url(clearanceUrl)
+add_brands_from_url(activeWearUrl)
+add_brands_from_url(accessoriesUrl)
+add_brands_from_url(shoesUrl)
 add_brands_from_url(savingsUrl)
 
 totalItems = 0
