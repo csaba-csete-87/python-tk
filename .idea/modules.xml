@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PythonTk.iml" filepath="$PROJECT_DIR$/.idea/PythonTk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TkMaxx.iml" filepath="$PROJECT_DIR$/.idea/TkMaxx.iml" />
     </modules>
   </component>
 </project>
